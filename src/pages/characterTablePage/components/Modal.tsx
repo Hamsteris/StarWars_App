@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Box,
   Modal,
   Paper,
   Typography,
@@ -44,6 +43,7 @@ const CharacterDetailsModal: React.FC<CharacterDetailsModalProps> = ({
     setLoading(true);
     onClose();
   };
+
   const translateUnknown = (value: string | null | undefined) => {
     const lowercaseValue = value?.toLowerCase() || 'unknown';
 
@@ -57,35 +57,18 @@ const CharacterDetailsModal: React.FC<CharacterDetailsModalProps> = ({
     <Modal
       open={!!character}
       onClose={handleClose}
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
+      className="flex items-center justify-center"
     >
       {loading ? (
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '100%',
-          }}
-        >
-          <CircularProgress
-            size={60}
-            sx={{ color: '#BE3144' }}
-          />
-        </Box>
+        <div className="flex items-center justify-center h-full">
+          <CircularProgress size={60} sx={{ color: '#BE3144' }} />
+        </div>
       ) : (
         <Paper
+          className="relative w-[400px] p-6 rounded-lg"
           sx={{
-            width: 400,
-            p: 3,
             color: '#FBFBFB',
             backgroundColor: '#2E2E2E',
-            borderRadius: 2,
-            position: 'relative',
           }}
         >
           <IconButton
@@ -115,10 +98,20 @@ const CharacterDetailsModal: React.FC<CharacterDetailsModalProps> = ({
                 [t('characterDetails.mass'), `${translateUnknown(character.mass)} kg`],
               ].map(([label, value]) => (
                 <TableRow key={label as string}>
-                  <TableCell sx={{ color: '#FBFBFB', borderColor: '#FBFBFB' }}>
+                  <TableCell
+                    sx={{
+                      color: '#FBFBFB',
+                      borderColor: '#FBFBFB',
+                    }}
+                  >
                     {label}
                   </TableCell>
-                  <TableCell sx={{ color: '#FBFBFB', borderColor: '#FBFBFB' }}>
+                  <TableCell
+                    sx={{
+                      color: '#FBFBFB',
+                      borderColor: '#FBFBFB',
+                    }}
+                  >
                     {value}
                   </TableCell>
                 </TableRow>
@@ -126,11 +119,11 @@ const CharacterDetailsModal: React.FC<CharacterDetailsModalProps> = ({
             </TableBody>
           </Table>
 
-          <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
+          <div className="mt-4 flex justify-center">
             <PageButton onClick={onNavigate}>
               {t('goToCharacterPage')}
             </PageButton>
-          </Box>
+          </div>
         </Paper>
       )}
     </Modal>

@@ -9,7 +9,6 @@ import CharacterDetailsModal from './Components/Modal';
 import { useTranslation } from 'react-i18next';
 import { Character } from '../../components/Character';
 
-
 const CharacterTable: React.FC = () => {
   const { t } = useTranslation();
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -20,7 +19,6 @@ const CharacterTable: React.FC = () => {
 
   useEffect(() => {
     const fetchCharacters = async () => {
-
       try {
         const response = await axios.get(`https://swapi.py4e.com/api/people/?page=${page}`);
         setCharacters(response.data.results);
@@ -62,14 +60,12 @@ const CharacterTable: React.FC = () => {
   return (
     <Box
       sx={{
-        maxWidth: 800,
-        mx: 'auto',
-        mt: 5,
-        p: 3,
+        
         borderRadius: 2,
         backgroundColor: '#2E2E2E',
         boxShadow: 3,
       }}
+      className="max-w-4xl mx-auto mt-10 p-6"
     >
       <Header title={t('starWarsCharacters')} />
 

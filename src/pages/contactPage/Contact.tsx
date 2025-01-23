@@ -33,6 +33,7 @@ const ContactForm = () => {
         color: '#FBFBFB',
         boxShadow: 3,
       }}
+      className="max-w-md mx-auto mt-12 p-6 rounded-lg bg-gray-800 text-white shadow-lg"
     >
       <Typography
         variant="h4"
@@ -40,11 +41,12 @@ const ContactForm = () => {
         align="center"
         gutterBottom
         sx={{ color: '#FBFBFB' }}
+        className="text-2xl font-semibold text-center mb-4"
       >
         {t('contactUs')}
       </Typography>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <ControlledInput
           name="name"
           control={control}
@@ -77,6 +79,7 @@ const ContactForm = () => {
             justifyContent: 'center',
             mt: 2,
           }}
+          className="flex justify-center mt-4"
         >
           <PageButton
             type="submit"

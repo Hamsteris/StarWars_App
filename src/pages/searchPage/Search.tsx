@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Box } from '@mui/material';
 
 import SearchBar from './Components/SearchBar';
 import { Character } from '../../components/Character';
@@ -44,14 +43,7 @@ const Search: React.FC = () => {
   };
 
   return (
-    <Box
-      sx={{
-        position: 'relative',
-        mt: 5,
-        maxWidth: 600,
-        mx: 'auto',
-      }}
-    >
+    <div className="relative mt-10 max-w-3xl mx-auto">
       <SearchBar
         query={query}
         setQuery={setQuery}
@@ -59,7 +51,7 @@ const Search: React.FC = () => {
         showDropdown={showDropdown}
         onItemClick={handleItemClick}
       />
-    </Box>
+    </div>
   );
 };
 

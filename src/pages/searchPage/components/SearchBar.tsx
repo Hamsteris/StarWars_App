@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { TextField, Paper, List, ListItem, Typography } from '@mui/material';
-import '../../../utils/i18n'
+import '../../../utils/i18n';
 import { useTranslation } from 'react-i18next';
 
 interface SearchBarProps {
@@ -14,7 +14,7 @@ interface SearchBarProps {
 const SearchBar: FC<SearchBarProps> = ({ query, setQuery, results, showDropdown, onItemClick }) => {
   const { t } = useTranslation();
   return (
-    <>
+    <div className="relative w-full max-w-lg mx-auto">
       <TextField
         fullWidth
         variant="outlined"
@@ -36,14 +36,12 @@ const SearchBar: FC<SearchBarProps> = ({ query, setQuery, results, showDropdown,
             },
           },
         }}
+        className="mb-4"
       />
       {showDropdown && results.length > 0 && (
         <Paper
           elevation={4}
           sx={{
-            position: 'absolute',
-            top: '100%',
-            left: 0,
             width: '100%',
             zIndex: 1000,
             maxHeight: 200,
@@ -65,8 +63,9 @@ const SearchBar: FC<SearchBarProps> = ({ query, setQuery, results, showDropdown,
               backgroundColor: '#2E2E2E',
             },
           }}
+          className="mt-2"
         >
-          <List>
+          <List className="p-2">
             {results.map((character) => (
               <ListItem
                 key={character.name}
@@ -76,6 +75,7 @@ const SearchBar: FC<SearchBarProps> = ({ query, setQuery, results, showDropdown,
                   color: '#FBFBFB',
                   '&:hover': { backgroundColor: '#444444' },
                 }}
+                className="mb-1"
               >
                 <Typography>{character.name}</Typography>
               </ListItem>
@@ -83,7 +83,7 @@ const SearchBar: FC<SearchBarProps> = ({ query, setQuery, results, showDropdown,
           </List>
         </Paper>
       )}
-    </>
+    </div>
   );
 };
 

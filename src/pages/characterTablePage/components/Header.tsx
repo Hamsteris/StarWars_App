@@ -8,9 +8,8 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <Box
+      className="text-center mb-3"
       sx={{
-        textAlign: 'center',
-        mb: 3,
         color: '#FBFBFB',
       }}
     >

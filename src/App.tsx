@@ -11,7 +11,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <Navbar />
-      <div style={{ marginTop: '64px' }}>
+      <div className="mt-16">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />

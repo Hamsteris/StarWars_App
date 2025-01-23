@@ -9,21 +9,31 @@ const Home: React.FC = () => {
   return (
     <Container
       sx={{
-        marginTop: '80px',
         backgroundColor: '#242424',
         color: '#FBFBFB',
-        minHeight: '100vh',
       }}
       maxWidth="sm"
+      className="mt-20 text-white min-h-screen"
     >
-      <Box sx={{ textAlign: 'center', padding: '2rem' }}>
-        <Typography variant="h3" gutterBottom sx={{ fontWeight: 'bold', color: '#872341' }}>
+      <Box  className="text-center p-8">
+        <Typography
+          variant="h3"
+          gutterBottom
+          sx={{ fontWeight: 'bold', color: '#872341' }}
+        >
           {t('welcome')}
         </Typography>
-        <Typography variant="body1" color="inherit">
+        <Typography
+          variant="body1"
+          color="inherit"
+          className="text-base"
+        >
           {t('description')}
         </Typography>
-        <Typography component="div" color="#DDE5B4" sx={{ textAlign: 'center', marginTop: '1rem' }}>
+        <Typography
+          component="div"
+          color="#DDE5B4"
+        >
           <AsciiArt />
         </Typography>
       </Box>

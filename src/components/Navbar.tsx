@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   AppBar,
   Toolbar,
-  Typography,
   Box,
   Button,
   IconButton,
@@ -15,6 +14,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
 import '../utils/i18n';
 import { useTranslation } from 'react-i18next';
+import { Typography } from '@mui/material';
+
 
 interface NavLinkItem {
   label: string;
@@ -27,15 +28,15 @@ const Navbar: React.FC = () => {
 
   const toggleDrawer =
     (open: boolean) =>
-      (event: React.KeyboardEvent | React.MouseEvent): void => {
-        if (
-          event.type === 'keydown' &&
-          ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')
-        ) {
-          return;
-        }
-        setDrawerOpen(open);
-      };
+    (event: React.KeyboardEvent | React.MouseEvent): void => {
+      if (
+        event.type === 'keydown' &&
+        ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')
+      ) {
+        return;
+      }
+      setDrawerOpen(open);
+    };
 
   const navLinks: NavLinkItem[] = [
     { label: t('home'), to: '/' },
@@ -50,34 +51,19 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <AppBar
-        position="fixed"
-        sx={{
-          backgroundColor: '#2E2E2E',
-          color: '#FBFBFB',
-        }}
-      >
-        <Toolbar
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
+      <AppBar position="fixed" sx={{ backgroundColor: '#2E2E2E', color: '#FBFBFB' }}>
+        <Toolbar className="flex justify-between items-center">
           <Typography
             variant="h6"
             sx={{ fontWeight: 'bold', cursor: 'pointer' }}
             component={NavLink}
             to="/"
-            style={{
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
+            style={{ textDecoration: 'none', color: 'inherit' }}
           >
             StarWars App
           </Typography>
 
-          <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+          <Box className="block md:hidden">
             <IconButton
               edge="start"
               color="inherit"
@@ -92,11 +78,7 @@ const Navbar: React.FC = () => {
               onClose={toggleDrawer(false)}
             >
               <Box
-                sx={{
-                  width: 250,
-                  backgroundColor: '#2E2E2E',
-                  height: '100%',
-                }}
+                sx={{ width: 250, backgroundColor: '#2E2E2E', height: '100%' }}
                 role="presentation"
                 onClick={toggleDrawer(false)}
                 onKeyDown={toggleDrawer(false)}
@@ -110,25 +92,14 @@ const Navbar: React.FC = () => {
                       sx={{
                         color: '#FBFBFB',
                         textTransform: 'none',
-                        '&.active': {
-                          color: '#BE3144',
-                          fontWeight: 'bold',
-                        },
+                        '&.active': { color: '#BE3144', fontWeight: 'bold' },
                       }}
                     >
                       <ListItemText primary={item.label} />
                     </ListItem>
                   ))}
                 </List>
-
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: 2,
-                    marginTop: '1rem',
-                  }}
-                >
+                <Box className="flex justify-center gap-4 mt-4">
                   <Button
                     onClick={() => handleLanguageChange('en')}
                     sx={{
@@ -153,14 +124,8 @@ const Navbar: React.FC = () => {
               </Box>
             </Drawer>
           </Box>
-          <Box
-            sx={{
-              display: { xs: 'none', md: 'flex' },
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: 2,
-            }}
-          >
+
+          <Box className="hidden md:flex items-center gap-4">
             {navLinks.map((item) => (
               <Button
                 key={item.to}
@@ -169,20 +134,14 @@ const Navbar: React.FC = () => {
                 sx={{
                   color: '#FBFBFB',
                   textTransform: 'none',
-                  '&.active': {
-                    color: '#BE3144',
-                    fontWeight: 'bold',
-                  },
-                  '&:hover': {
-                    color: '#BE3144',
-                  },
+                  '&.active': { color: '#BE3144', fontWeight: 'bold' },
+                  '&:hover': { color: '#BE3144' },
                 }}
               >
                 {item.label}
               </Button>
             ))}
-
-            <Box sx={{ display: 'flex', gap: 1, marginLeft: 2 }}>
+            <Box className="flex gap-4 ml-4">
               <Button
                 onClick={() => handleLanguageChange('en')}
                 sx={{

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Box } from '@mui/material';
 import PageButton from '../../../components/PageButton';
 import { useTranslation } from 'react-i18next';
 
@@ -10,9 +9,9 @@ interface PaginationProps {
 }
 
 const Pagination: React.FC<PaginationProps> = ({ page, totalPages, onPageChange }) => {
-  const { t } = useTranslation()
-  const generatePageNumbers = (): number[] => {
+  const { t } = useTranslation();
 
+  const generatePageNumbers = (): number[] => {
     const pageNumbers: number[] = [];
     const range = 3;
     const start = Math.max(2, page - Math.floor(range / 2));
@@ -34,36 +33,16 @@ const Pagination: React.FC<PaginationProps> = ({ page, totalPages, onPageChange 
   };
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        mt: 3,
-        gap: 2,
-        flexWrap: { xs: 'wrap', sm: 'nowrap' },
-      }}
-    >
-
+    <div className="flex items-center justify-between mt-3 gap-2">
       <PageButton
         onClick={() => onPageChange(Math.max(page - 1, 1))}
         disabled={page === 1}
-
+        
       >
         {t('prev')}
       </PageButton>
 
-
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-          gap: 1,
-          flexGrow: 1,
-        }}
-      >
+      <div className="flex items-center justify-center gap-1 flex-grow overflow-auto">
         {generatePageNumbers().map((pageNum) => (
           <PageButton
             key={pageNum}
@@ -80,16 +59,16 @@ const Pagination: React.FC<PaginationProps> = ({ page, totalPages, onPageChange 
             {pageNum}
           </PageButton>
         ))}
-      </Box>
-
+      </div>
 
       <PageButton
         onClick={() => onPageChange(Math.min(page + 1, totalPages))}
         disabled={page === totalPages}
+        
       >
         {t('next')}
       </PageButton>
-    </Box>
+    </div>
   );
 };
 
