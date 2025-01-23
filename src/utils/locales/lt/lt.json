@@ -1,0 +1,47 @@
+{
+    "welcome": "Sveiki!",
+    "description": "Ieškokite „StarWars“ personažų, peržiūrėkite jų informaciją ir susisiekite su mumis!",
+    "searchForChar": "Įrašykite veikėją",
+    "home": "Pagrindinis",
+    "search": "Ieškoti",
+    "characterTable": "Veikėjų lentelė",
+    "contact": "Susisiekti",
+    "starWarsCharacters": "StarWars Veikėjai",
+    "prev": "Atgal",
+    "next": "Kitas",
+    "characterDetails": {
+        "name": "Vardas",
+        "gender": "Lytis",
+        "height": "Ūgis",
+        "mass": "Svoris",
+        "unknown": "Nežinoma",
+        "birthYear": "Gimimo Metai",
+        "homePlanet": "Gimtoji Planeta",
+        "films": "Filmai",
+        "loading": "Kraunama...",
+        "back": "Atgal",
+        "release": "Išleidimo metai",
+        "genders": {
+            "male": "Vyras",
+            "female": "Moteris",
+            "n/a": "Netaikoma",
+            "none": "Nėra",
+            "unknown": "Nežinoma",
+            "hermaphrodite": "Hermafroditas"
+        },
+        "homeworld": {
+            "unknown": "Nežinoma",
+            "none": "Jokia"
+        }
+    },
+    "goToCharacterPage": "Eiti į veikėjo puslapį",
+    "contactUs": "Susisiekite su mumis",
+    "nameRequired": "Reikalingas vardas",
+    "email": "El. paštas",
+    "emailRequired": "Reikalingas el. paštas",
+    "invalidEmail": "Netinkamas el. paštas",
+    "message": "Žinutė",
+    "messageRequired": "Reikalinga žinutė",
+    "submit": "Pateikti",
+    "formSubmitted": "Forma pateikta"
+}

@@ -1,0 +1,47 @@
+{
+    "welcome": "Welcome!",
+    "description": "Search for StarWars characters, view their details, and get in touch with us!",
+    "searchForChar": "Search for a character",
+    "home": "Home",
+    "search": "Search",
+    "characterTable": "Character Table",
+    "contact": "Contact",
+    "starWarsCharacters": "StarWars Characters",
+    "prev": "Prev",
+    "next": "Next",
+    "characterDetails": {
+        "name": "Name",
+        "gender": "Gender",
+        "height": "Height",
+        "mass": "Mass",
+        "unknown": "-",
+        "birthYear": "Birth Year",
+        "homePlanet": "Home Planet",
+        "films": "Films",
+        "loading": "Loading...",
+        "back": "Back",
+        "release": "Release date",
+        "genders": {
+            "male": "Male",
+            "female": "Female",
+            "n/a": "Not Applicable",
+            "none": "None",
+            "unknown": "-",
+            "hermaphrodite": "Hermaphrodite"
+        },
+        "homeworld": {
+            "unknown": "-",
+            "none": "-"
+        }
+    },
+    "goToCharacterPage": "Go To Character Page",
+    "contactUs": "Contact Us",
+    "nameRequired": "Name is required",
+    "email": "Email",
+    "emailRequired": "Email is required",
+    "invalidEmail": "Invalid Email",
+    "message": "Message",
+    "messageRequired": "Message is required",
+    "submit": "Submit",
+    "formSubmitted": "Form Submitted"
+}
